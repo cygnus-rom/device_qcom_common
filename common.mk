@@ -1,3 +1,5 @@
+BOARD_USES_ADRENO := true
+
 # include additional build utilities
 -include device/qcom/common/utils.mk
 
