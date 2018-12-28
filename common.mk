@@ -17,10 +17,13 @@ TARGET_USES_QCOM_MM_AUDIO := true
 # SECCOMP Extension
 BOARD_SECCOMP_POLICY += device/qcom/common/seccomp
 
-# video seccomp policy files
 PRODUCT_COPY_FILES += \
     device/qcom/common/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     device/qcom/common/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+
+# Mark GRALLOC_USAGE_PRIVATE_WFD as valid gralloc bits
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS ?= 0
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS += | (1 << 21)
 
 # Advanced DPM
 ifeq ($(TARGET_WANTS_EXTENDED_DPM_PLATFORM),true)
