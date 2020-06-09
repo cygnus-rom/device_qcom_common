@@ -41,6 +41,10 @@ ifneq (,$(filter audio, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(DEVICE_PATH)/audio/qti-audio.mk
 endif
 
+ifneq (,$(filter display, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(DEVICE_PATH)/display/qti-display.mk
+endif
+
 
 # QCOM HW crypto
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
