@@ -36,6 +36,12 @@ PRODUCT_BOOT_JARS += dpmapi
 PRODUCT_BOOT_JARS += com.qti.location.sdk
 endif
 
+# 845 series and newer
+ifneq (,$(filter audio, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(DEVICE_PATH)/audio/qti-audio.mk
+endif
+
+
 # QCOM HW crypto
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
     TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
