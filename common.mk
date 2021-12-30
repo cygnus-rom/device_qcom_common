@@ -3,6 +3,7 @@
 #
 
 # Default board flags for QC devices
+LOCAL_PATH := $(call my-dir)
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_HAS_QC_KERNEL_SOURCE := true
 BOARD_USES_ADRENO := true
@@ -38,23 +39,23 @@ endif
 
 # 845 series and newer
 ifneq (,$(filter audio, $(TARGET_COMMON_QTI_COMPONENTS)))
-include $(DEVICE_PATH)/audio/qti-audio.mk
+include $(LOCAL_PATH)/audio/qti-audio.mk
 endif
 
 ifneq (,$(filter display, $(TARGET_COMMON_QTI_COMPONENTS)))
-include $(DEVICE_PATH)/display/qti-display.mk
+include $(LOCAL_PATH)/display/qti-display.mk
 endif
 
 ifneq (,$(filter perf, $(TARGET_COMMON_QTI_COMPONENTS)))
-include $(DEVICE_PATH)/perf/qti-perf.mk
+include $(LOCAL_PATH)/perf/qti-perf.mk
 endif
 
 ifneq (,$(filter telephony, $(TARGET_COMMON_QTI_COMPONENTS)))
-include $(DEVICE_PATH)/telephony/qti-telephony.mk
+include $(LOCAL_PATH)/telephony/qti-telephony.mk
 endif
 
 ifneq (,$(filter usb, $(TARGET_COMMON_QTI_COMPONENTS)))
-include $(DEVICE_PATH)/usb/qti-usb.mk
+include $(LOCAL_PATH)/usb/qti-usb.mk
 endif
 
 # QCOM HW crypto

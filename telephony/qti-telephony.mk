@@ -12,18 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
 PRODUCT_SOONG_NAMESPACES += \
-    device/qcom/common/system/telephony
+    device/qcom/common/telephony
 
 # APN List
 PRODUCT_COPY_FILES += \
-    $(QCOM_COMMON_PATH)/system/telephony/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml \
+    device/qcom/common/telephony/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml \
 
 # Data Services
 $(call inherit-product, vendor/qcom/opensource/dataservices/dataservices_vendor_product.mk)
 
 # HIDL
-DEVICE_FRAMEWORK_MANIFEST_FILE += $(QCOM_COMMON_PATH)/system/telephony/framework_manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE += device/qcom/common/telephony/framework_manifest.xml
 
 # IPACM
 $(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
@@ -94,7 +95,7 @@ endif
 
 # Sensitive Phone Numbers list
 PRODUCT_COPY_FILES += \
-    $(QCOM_COMMON_PATH)/system/telephony/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
+    device/qcom/common/telephony/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
 
 # Sounds
 PRODUCT_PRODUCT_PROPERTIES += \
