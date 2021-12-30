@@ -53,6 +53,10 @@ ifneq (,$(filter telephony, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(DEVICE_PATH)/telephony/qti-telephony.mk
 endif
 
+ifneq (,$(filter usb, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(DEVICE_PATH)/usb/qti-usb.mk
+endif
+
 # QCOM HW crypto
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
     TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
