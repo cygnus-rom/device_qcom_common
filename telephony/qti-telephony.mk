@@ -24,7 +24,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, vendor/qcom/opensource/dataservices/dataservices_vendor_product.mk)
 
 # HIDL
-DEVICE_FRAMEWORK_MANIFEST_FILE += device/qcom/common/telephony/framework_manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE += device/qcom/common/telephony/atcmdfwd-saidl.xml
 
 # IPACM
 $(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
