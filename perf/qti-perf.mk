@@ -70,4 +70,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/qcom/common/perf/perf-vendor.mk)
+$(call inherit-product-if-exists, vendor/qcom/common/vendor/perf/perf-vendor.mk)
